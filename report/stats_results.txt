@@ -1,0 +1,136 @@
+=============================================================
+RQ1: Does turnaround time differ by discipline?
+=============================================================
+# A tibble: 1 × 6
+  .y.                  n statistic    df        p method        
+* <chr>            <int>     <dbl> <int>    <dbl> <chr>         
+1 turnaround_weeks 23024      377.    18 5.83e-69 Kruskal-Wallis
+
+Effect size (epsilon-squared):
+# A tibble: 1 × 5
+  .y.                  n effsize method  magnitude
+* <chr>            <int>   <dbl> <chr>   <ord>    
+1 turnaround_weeks 23024  0.0156 eta2[H] small    
+
+Post-hoc pairwise Wilcoxon (BH-adjusted), pairs with |median diff| >= 5 weeks:
+# A tibble: 43 × 7
+   group1                         group2  med1  med2 med_diff    p.adj p.adj.signif
+   <chr>                          <chr>  <dbl> <dbl>    <dbl>    <dbl> <chr>       
+ 1 Auxiliary sciences of history  Law       20    12        8 6.30e- 8 ****        
+ 2 Auxiliary sciences of history  Milit…    20    12        8 2.77e- 5 ****        
+ 3 History (General) and history… Law       20    12        8 1.9 e-21 ****        
+ 4 History (General) and history… Milit…    20    12        8 1.32e- 7 ****        
+ 5 History America                Law       20    12        8 3.77e- 7 ****        
+ 6 History America                Milit…    20    12        8 2.03e- 6 ****        
+ 7 Auxiliary sciences of history  Scien…    20    13        7 1.20e- 7 ****        
+ 8 Auxiliary sciences of history  Techn…    20    13        7 9.66e- 9 ****        
+ 9 History (General) and history… Scien…    20    13        7 2.76e-24 ****        
+10 History (General) and history… Techn…    20    13        7 5.08e-27 ****        
+# ℹ 33 more rows
+# ℹ Use `print(n = ...)` to see more rows
+
+
+=============================================================
+RQ2: Does turnaround time differ by publisher country?
+=============================================================
+# A tibble: 1 × 6
+  .y.                  n statistic    df     p method        
+* <chr>            <int>     <dbl> <int> <dbl> <chr>         
+1 turnaround_weeks 21122     2967.    40     0 Kruskal-Wallis
+
+Effect size (epsilon-squared):
+# A tibble: 1 × 5
+  .y.                  n effsize method  magnitude
+* <chr>            <int>   <dbl> <chr>   <ord>    
+1 turnaround_weeks 21122   0.139 eta2[H] moderate 
+
+Median turnaround by country (n >= 100), slowest to fastest:
+# A tibble: 41 × 4
+   country         n median_weeks mean_weeks
+   <chr>       <int>        <dbl>      <dbl>
+ 1 Norway        141           25       26.1
+ 2 France        403           24       26.7
+ 3 Canada        233           20       23.5
+ 4 Croatia       167           20       19.9
+ 5 Mexico        240           20       21.3
+ 6 Poland        977           20       21.0
+ 7 China         531           19       22.2
+ 8 India         414           19       20.6
+ 9 Netherlands   507           19       22.0
+10 Czechia       165           18       20.3
+# ℹ 31 more rows
+# ℹ Use `print(n = ...)` to see more rows
+
+
+=============================================================
+RQ3: Is APC status associated with turnaround time?
+=============================================================
+# A tibble: 1 × 7
+  .y.              group1 group2    n1    n2 statistic        p
+* <chr>            <chr>  <chr>  <int> <int>     <dbl>    <dbl>
+1 turnaround_weeks No     Yes    14547  8506 67706040. 3.18e-33
+
+Effect size (rank-biserial r):
+# A tibble: 1 × 7
+  .y.              group1 group2 effsize    n1    n2 magnitude
+* <chr>            <chr>  <chr>    <dbl> <int> <int> <ord>    
+1 turnaround_weeks No     Yes     0.0791 14547  8506 small    
+
+Median/mean by APC status:
+# A tibble: 2 × 4
+  apc       n median_weeks mean_weeks
+  <chr> <int>        <dbl>      <dbl>
+1 No    14547           15       18.0
+2 Yes    8506           13       16.1
+
+
+=============================================================
+RQ4: Does review process type relate to turnaround time?
+=============================================================
+# A tibble: 1 × 6
+  .y.                  n statistic    df        p method        
+* <chr>            <int>     <dbl> <int>    <dbl> <chr>         
+1 turnaround_weeks 23042      123.     4 1.20e-25 Kruskal-Wallis
+
+Effect size (epsilon-squared):
+# A tibble: 1 × 5
+  .y.                  n effsize method  magnitude
+* <chr>            <int>   <dbl> <chr>   <ord>    
+1 turnaround_weeks 23042 0.00517 eta2[H] small    
+
+Median/mean by review process type:
+# A tibble: 5 × 4
+  review_primary                   n median_weeks mean_weeks
+  <chr>                        <int>        <dbl>      <dbl>
+1 Open peer review               241           19       19.6
+2 Double anonymous peer review 14870           15       17.8
+3 Anonymous peer review         6224           13       16.2
+4 Editorial review                75           13       18.0
+5 Peer review                   1632           12       16.5
+
+
+=============================================================
+Follow-up: APC effect within each discipline (confound check)
+=============================================================
+# A tibble: 19 × 6
+   discipline           n_No n_Yes median_weeks_No median_weeks_Yes apc_median_diff
+   <chr>               <int> <int>           <dbl>            <dbl>           <dbl>
+ 1 History America        87     1            20                9             -11  
+ 2 History (General) …   502    42            20               11              -9  
+ 3 Music and books on…    80    15            20               12              -8  
+ 4 Auxiliary sciences…   196    26            20               13.5            -6.5
+ 5 Language and Liter…  1478   249            18               12              -6  
+ 6 Bibliography. Libr…   166    25            15               10              -5  
+ 7 Education            1304   541            16               12              -4  
+ 8 General Works         261    49            16               12              -4  
+ 9 Philosophy. Psycho…  1025   307            16               12              -4  
+10 Social Sciences      2034   737            15.5             12              -3.5
+11 Political science     452   107            15               12              -3  
+12 Agriculture           449   516            12               14               2  
+13 Fine Arts             551    89            16               14              -2  
+14 Medicine             2088  2579            12               14               2  
+15 Geography. Anthrop…   824   331            16               15              -1  
+16 Science              1111  1362            12               13               1  
+17 Technology           1185  1344            12               13               1  
+18 Law                   676   170            12.5             12              -0.5
+19 Military Science       59     6            12               12               0  
