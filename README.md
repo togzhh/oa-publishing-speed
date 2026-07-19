@@ -6,7 +6,7 @@ Scholarly publishing timelines are a persistent point of friction for researcher
 large-scale, cross-disciplinary data on how long open-access journals actually take is
 rarely aggregated in one place. This project uses the Directory of Open Access Journals
 (DOAJ) full registry export to ask: **does publication turnaround time vary systematically
-by discipline, publisher country, APC status, or review process — and where are the
+by discipline, publisher country, APC status, or review process - and where are the
 outliers?**
 
 ## Research Questions
@@ -88,19 +88,4 @@ weeks, range 1–100 weeks.
   (0.09×), Malaysia (0.16×), Bosnia and Herzegovina (0.17×). This runs counter to a naive
   "higher-volume/lower-resource publishing regions are slower" prior — the opposite pattern
   holds here, and is worth building the discussion section around.
-
-## Repository Structure
-
-```
-├── data/
-│   ├── raw/                          # untouched original DOAJ export
-│   └── processed/                    # cleaned + derived analysis outputs
-├── figures/                          # 6 exported plots (PNG)
-├── report/
-│   └── stats_results.txt             # full printed output of all statistical tests
-├── analysis.R                        # full pipeline: clean -> EDA -> stats -> outliers
-├── oa-publishing-speed.Rproj         # open this in RStudio -- sets working dir automatically
-├── README.md                         # this file
-└── LICENSE
-```
 
