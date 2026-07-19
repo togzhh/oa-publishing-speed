@@ -62,12 +62,12 @@ outliers?**
 **n = 23,053 journals after cleaning.** Overall turnaround: median 14 weeks, mean 17.3
 weeks, range 1–100 weeks.
 
-| RQ | Test | Effect size 
+| RQ | Test | Effect size | Verdict |
 |---|---|---|---|
-| Discipline | Kruskal-Wallis, χ²=377, df=18, p=5.8×10⁻⁶⁹ | ε²=0.016 (small) 
-| Country | Kruskal-Wallis, χ²=2967, df=40, p<10⁻³⁰⁰ | ε²=0.139 (moderate) 
+| Discipline | Kruskal-Wallis, χ²=377, df=18, p=5.8×10⁻⁶⁹ | ε²=0.016 (small) | Statistically real, practically weak |
+| Country | Kruskal-Wallis, χ²=2967, df=40, p<10⁻³⁰⁰ | ε²=0.139 (moderate) | **Country matters more than discipline** |
 | APC status | Wilcoxon, p=3.2×10⁻³³ | r=0.079 (small) | APC journals ~2 weeks faster (median 13 vs. 15) |
-| Review type | Kruskal-Wallis, χ²=123, df=4, p=1.2×10⁻²⁵ | ε²=0.005 (small) 
+| Review type | Kruskal-Wallis, χ²=123, df=4, p=1.2×10⁻²⁵ | ε²=0.005 (small) | Barely matters |
 
 - **By discipline**: History-related fields (median 20 weeks) are slowest; Law and Military
   Science (median 12 weeks) are fastest. Differences are statistically significant but small
@@ -89,4 +89,18 @@ weeks, range 1–100 weeks.
   "higher-volume/lower-resource publishing regions are slower" prior — the opposite pattern
   holds here, and is worth building the discussion section around.
 
+## Repository Structure
+
+```
+├── data/
+│   ├── raw/                          # untouched original DOAJ export
+│   └── processed/                    # cleaned + derived analysis outputs
+├── figures/                          # 6 exported plots (PNG)
+├── report/
+│   └── stats_results.txt             # full printed output of all statistical tests
+├── analysis.R                        # full pipeline: clean -> EDA -> stats -> outliers
+├── oa-publishing-speed.Rproj         # open this in RStudio -- sets working dir automatically
+├── README.md                         # this file
+└── LICENSE
+```
 
