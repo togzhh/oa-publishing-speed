@@ -62,12 +62,12 @@ outliers?**
 **n = 23,053 journals after cleaning.** Overall turnaround: median 14 weeks, mean 17.3
 weeks, range 1–100 weeks.
 
-| RQ | Test | Effect size | Verdict |
-|---|---|---|---|
-| Discipline | Kruskal-Wallis, χ²=377, df=18, p=5.8×10⁻⁶⁹ | ε²=0.016 (small) | Statistically real, practically weak |
-| Country | Kruskal-Wallis, χ²=2967, df=40, p<10⁻³⁰⁰ | ε²=0.139 (moderate) | **Country matters more than discipline** |
-| APC status | Wilcoxon, p=3.2×10⁻³³ | r=0.079 (small) | APC journals ~2 weeks faster (median 13 vs. 15) |
-| Review type | Kruskal-Wallis, χ²=123, df=4, p=1.2×10⁻²⁵ | ε²=0.005 (small) | Barely matters |
+| RQ | Test | Effect size | 
+|---|---|---|
+| Discipline | Kruskal-Wallis, χ²=377, df=18, p=5.8×10⁻⁶⁹ | ε²=0.016 (small) | 
+| Country | Kruskal-Wallis, χ²=2967, df=40, p<10⁻³⁰⁰ | ε²=0.139 (moderate) | 
+| APC status | Wilcoxon, p=3.2×10⁻³³ | r=0.079 (small) | 
+| Review type | Kruskal-Wallis, χ²=123, df=4, p=1.2×10⁻²⁵ | ε²=0.005 (small) | 
 
 - **By discipline**: History-related fields (median 20 weeks) are slowest; Law and Military
   Science (median 12 weeks) are fastest. Differences are statistically significant but small
