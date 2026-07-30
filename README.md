@@ -69,11 +69,10 @@ weeks, range 1–100 weeks.
 - **By country** (n≥100 journals): Norway (median 25 wks) and France (24 wks) are slowest
   among high-volume countries; this is the strongest predictor in the dataset.
 - **By APC**: journals charging an APC report faster turnaround (median 13 vs. 15 weeks).
-  This effect is *not* simply a discipline confound — checked directly in `analysis.R` Part
-  3 (APC-by-discipline breakdown) — though it flips direction in a few disciplines (e.g.
+  This effect is *not* simply a discipline confound, though it flips direction in a few disciplines (e.g.
   Medicine, Science, Technology, Agriculture: non-APC is *faster* there), so it isn't a
   uniform effect across fields.
-- **By review process**: essentially negligible (ε²=0.005) — not a meaningful predictor on
+- **By review process**: essentially negligible (ε²=0.005) - not a meaningful predictor on
   its own.
 - **Outlier pattern (RQ5)**: 2,469 journals flagged as slow outliers (≥90th percentile
   within their own discipline). Countries **over-represented** in the slow tail relative to
