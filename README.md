@@ -28,18 +28,12 @@ outliers?**
 
 ### Known limitations
 
-- The turnaround figure is **self-reported by the journal to DOAJ**, not independently
-  measured from article-level timestamps — treat it as a claimed value, not ground truth.
+- The turnaround figure is **self-reported by the journal to DOAJ**.
 - It's a **single combined metric** (submission→publication). It cannot be split into
-  submission→acceptance and acceptance→publication without article-level data. Some
-  publishers deposit `received`/`accepted` history dates into Crossref (via JATS `<history>`
-  metadata), but coverage is inconsistent across publishers — a viable extension, not part
-  of this analysis.
-- Cross-sectional snapshot, not longitudinal.
+  submission→acceptance and acceptance→publication without article-level data. 
+- Cross-sectional data, not longitudinal.
 - `discipline` is derived by taking the *first* pipe-separated subject classification DOAJ
-  lists for a journal and its top-level LCC category. Multidisciplinary journals are
-  therefore assigned to only one of their categories (whichever DOAJ lists first) — a
-  simplification, not a validated classification.
+  lists for a journal and its top-level LCC category. 
 
 ## Methodology
 
