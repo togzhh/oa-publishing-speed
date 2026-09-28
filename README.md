@@ -38,15 +38,15 @@ outliers?**
 ## Methodology
 
 1. **Clean** (`analysis.R`, Part 1): dedupe by ISSN, parse `Subjects` into a top-level
-   discipline, standardize APC/country/review-process fields, flag (not remove) extreme
-   turnaround values (>104 weeks).
+   discipline, standardise APC/country/review-process fields, flag (not remove) extreme
+ turnaround values (>104 weeks).
 2. **Explore** (Part 2): distributions and boxplots by discipline, country, APC, and review
-   process.
+ process.
 3. **Test** (Part 3): turnaround is heavily right-skewed, so all group comparisons use
    non-parametric tests — Kruskal-Wallis across >2 groups, Wilcoxon rank-sum for the binary
    APC comparison — with effect sizes (epsilon-squared / rank-biserial r) reported alongside
-   p-values. With n > 20,000, p-values alone are close to meaningless; effect size is what
-   tells you whether a difference actually matters.
+ p-values. With n > 20,000, p-values alone are close to meaningless; effect size is what
+ tells you whether a difference actually matters.
 4. **Outliers** (Part 4): flagged within each discipline (a journal's 90th percentile is
    relative to its own field), since a global cutoff would just re-surface the discipline
    effect rather than genuine outliers.
@@ -65,13 +65,13 @@ weeks, range 1–100 weeks.
 
 - **By discipline**: History-related fields (median 20 weeks) are slowest; Law and Military
   Science (median 12 weeks) are fastest. Differences are statistically significant but small
-  in magnitude — most disciplines cluster within a few weeks of each other.
+ in magnitude — most disciplines cluster within a few weeks of each other.
 - **By country** (n≥100 journals): Norway (median 25 wks) and France (24 wks) are slowest
-  among high-volume countries; this is the strongest predictor in the dataset.
+ among high-volume countries; this is the strongest predictor in the dataset.
 - **By APC**: journals charging an APC report faster turnaround (median 13 vs. 15 weeks).
-  This effect is *not* simply a discipline confound, though it flips direction in a few disciplines (e.g.
+  This effect is *not* simply a discipline confound. However, it flips direction in a few disciplines (e.g.
   Medicine, Science, Technology, Agriculture: non-APC is *faster* there), so it isn't a
-  uniform effect across fields.
+ uniform effect across fields.
 - **By review process**: essentially negligible (ε²=0.005) - not a meaningful predictor on
   its own.
 - **Outlier pattern (RQ5)**: 2,469 journals flagged as slow outliers (≥90th percentile
@@ -79,6 +79,6 @@ weeks, range 1–100 weeks.
   their overall share: France (2.8×), Belgium (2.7×), Norway (2.4×), Canada (2.4×), China
   (2.4×). Countries **under-represented**: Egypt (0.03×), Indonesia (0.09×), Bulgaria
   (0.09×), Malaysia (0.16×), Bosnia and Herzegovina (0.17×). This runs counter to a naive
-  "higher-volume/lower-resource publishing regions are slower" prior — the opposite pattern
-  holds here, and is worth building the discussion section around.
+  "higher-volume/lower-resource publishing regions are slower" prior - the opposite pattern
+ holds here, and is worth building the discussion section around.
 
